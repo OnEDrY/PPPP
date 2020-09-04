@@ -7,15 +7,23 @@ import java.awt.event.ActionEvent;
 public class Main extends JFrame {
 
     JPanel panel = new JPanel();
+    JPanel p = new JPanel();
+    JPanel name = new JPanel();
 
+    Font font = new Font("Times new roman",Font.BOLD,80);
 
-     JTextArea textAreaMilan = new JTextArea( 1, 1);
-     JTextArea textAreaMadrid = new JTextArea(1,1);
+    Label l = new Label("Madrid");
+    Label m = new Label("Milan");
+
+    Label space = new Label("                                        ");
+
+     JTextArea textAreaMilan = new JTextArea( 30, 11);
+     JTextArea textAreaMadrid = new JTextArea(30,11);
 
      int countMadrid = 1;
      int countMilan = 1;
 
-     JButton buttonMilan = new JButton("Add point Milan");
+     JButton buttonMilan = new JButton(" Add point Milan ");
      JButton buttonMadrid = new JButton("Add point Madrid");
      JButton buttonEnd = new JButton(" Match result");
 
@@ -24,18 +32,32 @@ public class Main extends JFrame {
 
 
          super("Main");
-         setSize(400,300);
+         setSize(1920,1080);
 
          setLayout(new FlowLayout(FlowLayout.CENTER));
+         setLayout(new GridLayout(3,1));
+         add(name);
+         add(p);
          add(panel);
-         //panel.setLayout(new BorderLayout());
-         panel.add(new Label("Madrid"),BorderLayout.WEST);
-         panel.add(textAreaMadrid,BorderLayout.WEST);
-         panel.add(new Label("Milan"),BorderLayout.EAST);
-         panel.add(textAreaMilan,BorderLayout.EAST);
+         p.setLayout(new BorderLayout());
+         panel.setLayout(new BorderLayout());
+
+         name.add(l,BorderLayout.WEST);
+         l.setFont(font);
+         p.add(textAreaMadrid,BorderLayout.WEST);
+         textAreaMadrid.setFont(font);
+
+         name.add(space,BorderLayout.CENTER);
+         space.setFont(font);
+
+         name.add(m,BorderLayout.EAST);
+         m.setFont(font);
+         p.add(textAreaMilan,BorderLayout.EAST);
+         textAreaMilan.setFont(font);
+
          panel.add(buttonMadrid,BorderLayout.WEST);
          panel.add(buttonMilan,BorderLayout.EAST);
-         panel.add(buttonEnd,BorderLayout.SOUTH);
+         panel.add(buttonEnd,BorderLayout.CENTER);
 
 
 
