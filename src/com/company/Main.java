@@ -13,7 +13,7 @@ public class Main extends JFrame {
     Font font = new Font("Times new roman",Font.BOLD,80);
 
     Label l = new Label("Madrid");
-    Label m = new Label("Milan");
+    Label m = new Label("Milan ");
 
     Label space = new Label("                                        ");
 
@@ -100,14 +100,6 @@ public class Main extends JFrame {
                      }
                  }
              });
-
-
-
-
-
-
-
-
 
 
 
